@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #25001f;
+            background-image: url('/static/stucco.png');
+          
+        }
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .blog-container {
+            position: absolute;
+            left: 15%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(17, 1, 12);
+            background-image: url('/static/old-wall.png');
+            border-radius: 10px;
+            box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+        }
+        .blog-post {
+            margin-bottom: 40px;
+        }
+        .blog-title {
+            font-size: 28px;
+            margin: 10px 0;
+            color: #fffefe;
+        }
+        .blog-content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #d4d4d4;
+        }
+        .blog-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px black;
+        }
+        .user-icon {
+            border: solid 2px black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #222;
+            cursor: pointer;
+            background-color: white;
+            z-index: 5;
+        }
+        .user-data {
+            position: absolute;
+            top: 5%;
+            right: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .modal {
+            display: none;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: absolute;
+            bottom: 60%;
+            left: 70%;
+            background-color: rgb(17, 218, 233);
+            padding: 200px;
+            border-radius: 10px;
+            max-width: 300px;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            border: 2px solid black;
+            background-color: #222;
+            color: white;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .option1{
+            position: absolute;
+            top: 14.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option1:hover{
+            transform: scale(1.05);
+        }
+        .option2{
+            position: absolute;
+            top: 24.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option2:hover{
+            transform: scale(1.05);
+        }
+        .option3{
+            position: absolute;
+            top: 34.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option3:hover{
+            transform: scale(1.1);
+        }
+        .option4{
+            position: absolute;
+            top: 44.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option4:hover{
+            transform: scale(1.05);
+        }
+        .option5{
+            position: absolute;
+            top: 54.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option5:hover{
+            transform: scale(1.05);
+        }
+        .option6{
+            position: absolute;
+            top: 64.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option6:hover{
+            transform: scale(1.05);
+        }
+        .option7{
+            position: absolute;
+            top: 74.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option7:hover{
+            transform: scale(1.05);
+        }
+        .option8{
+            position: absolute;
+            top: 84.5%;
+            left: 0%;
+            height: 10%;
+            width: 10%;
+            position: fixed;
+            background-color: black;
+            background-image: url('/static/asfalt-light.png');
+            z-index: 3;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+        .option8:hover{
+            transform: scale(1.05);
+        }
+        .blank{
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 20%;
+            width: 100%;
+            position: fixed;
+            background-image: url('codetitans-logo.png');
+            z-index: 2;
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            text-shadow: 0 0 4px white;
+        }
+        .logo-image{
+            position: absolute;
+            top: 7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30%;
+            height: 15%;
+            z-index: 4;
+            position: fixed;
+            padding-left: 37.5%;
+            padding-right: 37.5%;
+        }
+        .logo-image2{
+            position: absolute;
+            top: 3.3%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            position: fixed;
+            border: 1px solid rgb(153, 52, 52);
+            padding-left: 50%;
+            padding-right: 50%;
+            padding-top: 5.5%;
+            background-image: url('https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        }
+        .logo-container {
+            position: absolute;
+            top: 3.3%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            position: fixed;
+            width: 100%;
+            height: 22%;
+            box-shadow: 0 0 10px black;
+          }
+          
+        .logo-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+          }
+        .h11{
+            font-size: 80px;
+        }
+        .events-block{
+            position: absolute;
+            top: 20%;
+            left: 70%;
+            background-color: #25001f;
+            box-shadow: 0 0 10px black;
+            width: 20%;
+            height: 70%;
+            position: fixed;
+            border-radius: 18px;
+            z-index: 2;
+
+        }
+        .events{
+            position: absolute;
+            top: 30%;
+            left: 70%;
+            background-image: url('/static/pexels-pixabay-257433.jpg');
+            width: 20%;
+            height: 20%;
+            position: fixed;
+            z-index: 3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+
+        }
+        .events-headink{
+            font-size: 25px;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        </h1 class = 'h11'>FGVDSBHAJ<br>sdygcbugtdcsgvhcyvds</h1>
+        <div class="user-icon" id="user-icon">
+            <i class="fas fa-user"></i>
+        </div>
+    </header>
+    <div class="blog-container">
+        <div class="blog-post">
+            <img src='https://images.pexels.com/photos/11035474/pexels-photo-11035474.jpeg?auto=compress&cs=tinysrgb&w=600' alt="Blog Image" class="blog-image">
+            <h2 class="blog-title">The First Programming Language<br> That We Have Ever Learned</h2>
+            <p class="blog-content">
+                Our journey into programming started with that very first programming language,<br>
+                each of us with a unique choice. For us, it was Python.<br><br>
+
+                Python's simplicity and elegance made it the perfect introduction.<br>
+                It taught us the basics - variables, loops, functions, and data structures.<br>
+                Writing that first "Hello, World!" program was a small triumph but marked the<br>
+                beginning of an exciting coding adventure.<br><br>
+
+                Our first language, whether Python, Java, or another, opened doors to innovation<br>
+                and problem-solving. It instilled patience and persistence and honed our debugging<br>
+                skills.
+
+                In retrospect, that first language isn't just a tool; it's the foundation of our<br>
+                coding journey, a reminder of our evolution from beginners to capable developers.<br>
+            </p>
+        </div>
+        <div class="blog-post">
+            <img src="/static/pexels-pixabay-358561.jpg" alt="Blog Image" class="blog-image">
+            <h2 class="blog-title">Exploring Nature's Beauty</h2>
+            <p class="blog-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
+        </div>
+        <div id="user-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <h2>My Profile</h2>
+                <p>Name: {{ user_data.name }}</p>
+                <p>Email: {{ user_data.email }}</p>
+                <p>Phone: {{ user_data.phone }}</p>
+            </div>
+        </div>
+    </div>
+    <p class='blank'></p>
+    <img class='logo-image' src='/static/codetitans-logo-fotor-bg-remover-2023090316588.png'>
+    
+    <script>
+        const userIcon = document.getElementById('user-icon');
+        const userModal = document.getElementById('user-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        userIcon.addEventListener('click', () => {
+            userModal.style.display = 'block';
+        });
+
+        closeModal.addEventListener('click', () => {
+            userModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === userModal) {
+                userModal.style.display = 'none';
+            }
+        });
+    </script>
+        <button class='option1' onclick="location.href='/about'">About Us</button>
+        <button class='option2' onclick="location.href='/projects'">Our Projects</button>
+        <button class='option3' onclick="location.href='/services'">Our Services</button>
+        <button class='option4' onclick="location.href='/work_with_us'">Work With Us</button>
+        <button class='option5' onclick="location.href='/events'">Events</button>
+        <button class='option6' onclick="location.href='/latest_tech'">Latest Tech</button>
+        <button class='option7' onclick="location.href='/faqs'">FAQs</button>
+        <button class='option8' onclick="location.href='/terms_and_codetitans'">Terms & Codetitans</button>
+
+    <div class="logo-container">
+        <video class="logo-video" autoplay loop muted>
+          <source src='/static/InShot_20230903_190238394.mp4' type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class='events-block'>
+        <h2 class='events-headink'>Events Upcoming</h2>
+        <img class='events' src='/static/pexels-pixabay-358561.jpg'>
+    </div>
+</body>
+</html>

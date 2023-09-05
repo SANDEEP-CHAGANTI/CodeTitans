@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #cf06a4;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+    
+        ol {
+            margin-left: 20px;
+        }
+    
+        ul {
+            margin-left: 20px;
+        }
+    
+        li {
+            margin-bottom: 5px;
+        }
+    
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+    
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    
+        /* Style for the privacy policy pop-up */
+        #privacyPolicyPopup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+        }
+    
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            overflow: auto; /* Add this line for scrolling */
+            max-height: 80%; /* Add this line to limit the max height */
+        }
+    </style>
+    
+    <script>
+        function showPrivacyPolicy() {
+            const popup = document.getElementById('privacyPolicyPopup');
+            popup.style.display = 'block';
+        }
+
+        function closePrivacyPolicy() {
+            const popup = document.getElementById('privacyPolicyPopup');
+            popup.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Terms and Conditions</h1>
+        <p>Welcome to CodeTitans. These terms and conditions outline the rules and regulations for the use of [Your Company Name]'s Website and Mobile App.</p>
+
+        <h2>1. Data Protection and Privacy</h2>
+        <p>Your privacy is important to us. Our Privacy Policy, which can be found <a href="javascript:void(0);" onclick="showPrivacyPolicy()">here</a>, explains how we collect, use, and protect your personal information. By using our services, you agree to the terms of our Privacy Policy.</p>
+        
+        <!-- Privacy Policy Popup -->
+        <div id="privacyPolicyPopup">
+            <div class="popup-content">
+                <h2>Privacy Policy</h2>
+                <button onclick="closePrivacyPolicy()">Close</button>
+
+                <p>Effective Date: [Date]</p>
+
+                <p>Thank you for choosing CodeTitans! Your privacy and the security of your personal information are important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services. By using CodeTitans, you agree to the practices described in this Privacy Policy.</p>
+
+                <h3>Information We Collect</h3>
+
+                <p>We collect the following types of information when you use CodeTitans:</p>
+
+                <ul>
+                    <li><strong>Personal Information:</strong> When you register for an account, we collect your name, email address, and phone number. This information is necessary to provide you with our services and to communicate with you.</li>
+                    <li><strong>Usage Information:</strong> We collect information about how you use CodeTitans, such as your interactions with the app and the content you access.</li>
+                </ul>
+
+                <h3>How We Use Your Information</h3>
+
+                <p>We use your information for the following purposes:</p>
+
+                <ul>
+                    <li>To provide and improve our services.</li>
+                    <li>To personalize your experience and provide you with relevant content.</li>
+                    <li>To communicate with you, including sending service-related notifications and updates.</li>
+                </ul>
+
+                <h3>Sharing Your Information</h3>
+
+                <p>We do not share your personal information with third parties, except as described in this Privacy Policy or with your consent.</p>
+
+                <h3>Security</h3>
+
+                <p>We take security seriously and implement appropriate measures to protect your information. However, no method of transmission over the internet or electronic storage is completely secure, so we cannot guarantee its absolute security.</p>
+
+                <h3>Changes to This Privacy Policy</h3>
+
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the updated Privacy Policy on our website or within the app.</p>
+
+                <h3>Contact Us</h3>
+
+                <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+
+                <p>Email: <a href="mailto:sandeepchaganti266@gmail.com">sandeepchaganti266@gmail.com</a></p>
+            </div>
+        </div>
+        <h2>2. User Responsibilities</h2>
+        <p>By using CodeTitans, you agree to:</p>
+        <ul>
+            <li>Provide accurate and complete information during registration.</li>
+            <li>Keep your login credentials confidential and not share them with others.</li>
+            <li>Use the app responsibly and respect the rights and privacy of others.</li>
+            <li>Comply with all applicable laws and regulations.</li>
+        </ul>
+
+        <h2>3. User Data</h2>
+        <p>We collect and store the data you provide during registration, such as your name, email, and phone number, solely for the purpose of providing our services. We do not share your data with third parties without your consent, except as required by law.</p>
+
+        <h2>4. Termination</h2>
+        <p>We reserve the right to terminate or suspend your account at our discretion if you violate these terms and conditions or engage in inappropriate conduct within our app.</p>
+
+        <h2>5. Changes to Terms</h2>
+        <p>We may update these terms and conditions from time to time. Any changes will be posted on our website or app, and your continued use of our services after such changes constitute your acceptance of the new terms.</p>
+
+        <h2>6. Contact Information</h2>
+        <p>If you have any questions or concerns about these terms and conditions, please contact us at [Your Contact Information].</p>
+
+
+        <div class="footer">
+            &copy; 2023 CodeTitans. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

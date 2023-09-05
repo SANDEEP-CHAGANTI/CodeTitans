@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<style>
+    .register-button{
+        position: absolute;
+        top: 200%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1%;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+    }
+    .register-form{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 2%;
+        padding-bottom: 10px;
+
+    }
+    .already-registered{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .already-registered-text{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<h1>Register</h1>
+<form class = 'register-form' action="{{ url_for('register') }}" method="post">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="tel" name="phone" placeholder="Phone Number" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button class = 'register-button' type="submit">Register</button>
+</form>
+<p class='already-registered-text'>Already have an account?</p>
+<a class = 'already-registered' href="{{ url_for('login') }}">Go to Login Page</a>
+{% endblock %}
